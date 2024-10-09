@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import React from 'react'
+import styles from './eventCatecory.module.scss'
 
 const Page = async ({ params }) => {
 
@@ -17,16 +18,18 @@ const Page = async ({ params }) => {
 
     return (
         <div>
-            <h1>Event in {capitalizeCategory}</h1>
-            <div>
+            <h1 className={styles.headText}>Event in {capitalizeCategory}</h1>
+            <div className={styles.localEventsBoard}>
                 {data.map(event => (
                     <Link
                         key={event.id}
                         href={`/events/${category}/${event.id}`}
                         passHref>
-                            <Image src={event.image} alt = {event.title} width={150} height={150}/>
+                        <Image src={event.image} alt={event.title} width={350} height={350} />
+                        <div className={styles.eventDescription}>
                             <h2>{event.title}</h2>
                             <p>{event.description}</p>
+                        </div>
                     </Link>
                 ))}
             </div>

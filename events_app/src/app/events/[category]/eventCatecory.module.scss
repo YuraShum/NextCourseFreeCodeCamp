@@ -1,0 +1,33 @@
+@import "../../../../styles/variables.scss";
+
+.headText{
+    text-align: center;
+    margin: 30px 0px;
+
+}
+.localEventsBoard{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    a {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        transition: all 0.3s ease-in-out;
+
+        &:nth-child(odd){
+            flex-direction: row-reverse;
+        }
+        &:hover{
+            background-color: $background-color;
+        }
+    }
+    
+}
+.eventDescription{
+    text-align: center;
+    max-width: 300px;
+}

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import styles from './events.module.scss'
 
 const Page = async () => {
 
@@ -8,8 +9,8 @@ const Page = async () => {
 
     return (
         <div>
-            <h1>Events Page</h1>
-            <div>
+            <h1 className={styles.headText}>All events</h1>
+            <div className={styles.eventBoard}>
                 {events_categories.map(event => (
                     <Link
                         passHref
