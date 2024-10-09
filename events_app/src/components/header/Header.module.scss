@@ -1,0 +1,33 @@
+@import "../../../styles/variables.scss";
+
+.header {
+    padding: 0 50px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $background-color;
+    box-shadow: 1px 2px 4px $shadow-color;
+    margin-bottom: 20px;
+}
+
+.logo {
+    img {
+        border-radius: 50%;
+    }
+}
+
+.navigation {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+    
+    li {
+        transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    li:hover {
+        transform: translateY($hover-offset);
+        color: $primary-color;
+    }
+}
