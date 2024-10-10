@@ -19,6 +19,11 @@ const Page = async ({ params }) => {
         <h2>{currentEvent.title}</h2>
         <p>{currentEvent.description}</p>
       </div>
+      <form className={styles.registerSection}>
+        <label>Get registered for this event!</label>
+          <input type="email" />
+        <button>Submit</button>
+      </form>
     </div>
   );
 };
