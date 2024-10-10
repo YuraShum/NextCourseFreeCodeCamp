@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import React from 'react';
 import styles from './curentEvent.module.scss'
+import EventForm from '../../../../components/form/EventForm';
 
 const Page = async ({ params }) => {
   const { allEvents } = await import('../../../../data/data.json');
@@ -19,11 +20,7 @@ const Page = async ({ params }) => {
         <h2>{currentEvent.title}</h2>
         <p>{currentEvent.description}</p>
       </div>
-      <form className={styles.registerSection}>
-        <label>Get registered for this event!</label>
-          <input type="email" />
-        <button>Submit</button>
-      </form>
+      <EventForm/>
     </div>
   );
 };
