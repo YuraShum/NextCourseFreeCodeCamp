@@ -4,7 +4,7 @@ import React from 'react';
 import styles from './curentEvent.module.scss'
 
 const Page = async ({ params }) => {
-  const { allEvents } = await import('../../../../../data/data.json');
+  const { allEvents } = await import('../../../../data/data.json');
 
   const currentEvent = allEvents.find(event => event.id === params.id);
 
@@ -26,7 +26,7 @@ const Page = async ({ params }) => {
 export default Page;
 
 export async function generateStaticParams() {
-  const { allEvents } = await import('../../../../../data/data.json');
+  const { allEvents } = await import('../../../../data/data.json');
 
   const allPaths = allEvents.map(event => ({
     params: {

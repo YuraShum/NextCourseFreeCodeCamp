@@ -33,7 +33,7 @@ const Page = async () => {
 export default Page
 
 async function getStaticProps() {
-    const { events_categories } = await import('../../../data/data.json')
+    const { events_categories } = await import('../../data/data.json')
 
     return {
         events_categories

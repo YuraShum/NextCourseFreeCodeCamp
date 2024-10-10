@@ -1,4 +1,4 @@
-import HomePage from "@/components/home/Home";
+import HomePage from "../components/home/Home";
 
 export default async function Home() {
 
@@ -6,13 +6,13 @@ export default async function Home() {
 
   return (
     <div>
-      <HomePage events={events_categories}/>
+      <HomePage events={events_categories} />
     </div>
   );
 }
 
 async function getEvents() {
-  const { events_categories } = await import('../../data/data.json')
+  const { events_categories } = await import('../data/data.json')
   return {
     events_categories
   }

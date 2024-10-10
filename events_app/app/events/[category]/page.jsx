@@ -8,7 +8,7 @@ const Page = async ({ params }) => {
 
     const { category } = params;
     const capitalizeCategory = category[0].toUpperCase() + category.slice(1, category.length)
-    const { allEvents } = await import('../../../../data/data.json')
+    const { allEvents } = await import('../../../data/data.json')
     const data = allEvents.filter(event => event.city.toLowerCase() === category.toLowerCase())
     console.log(data)
 
@@ -40,7 +40,7 @@ const Page = async ({ params }) => {
 export default Page
 
 export async function generateStaticParams() {
-    const { events_categories } = await import('../../../../data/data.json');
+    const { events_categories } = await import('../../../data/data.json');
     const allPaths = events_categories.map((event) => ({
         category: event.id.toString(),
     }));
